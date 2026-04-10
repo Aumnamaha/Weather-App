@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather Forecast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌙</button>
+    <div class="app-container glass-panel">
+        <header>
+            <h1>Weather Forecast</h1>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name (e.g., London, New York)">
+            <button onclick="fetchWeather()">Search</button>
+            <button onclick="getLocationWeather()" class="location-btn" title="Use My Location">📍</button>
+        </div>
+
+        <div id="weatherDisplay" class="weather-display hidden">
+            <div class="main-info">
+                <h2 id="cityName">--</h2>
+                <div class="temp-box">
+                    <img id="weatherIcon" src="" alt="Weather Icon" class="weather-icon">
+                    <h1 id="temperature">--°C</h1>
+                </div>
+                <p id="description" class="description">--</p>
+            </div>
+            
+            <div class="details-grid">
+                <div class="detail-card">
+                    <span class="label">Humidity</span>
+                    <span id="humidity" class="value">--%</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Wind Speed</span>
+                    <span id="windSpeed" class="value">-- m/s</span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Pressure</span>
+                    <span id="pressure" class="value">-- hPa</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message hidden">
+            <p></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
